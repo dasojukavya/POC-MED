@@ -1,0 +1,6 @@
+{
+  "title": "New feature",
+  "body": "Please pull this in!",
+  "head": "mkelaskar-patch-1",
+  "base": "test"
+}
