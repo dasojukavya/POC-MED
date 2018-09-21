@@ -1,6 +1,7 @@
 {
-  "title": "New feature",
-  "body": "Please pull this in!",
-  "head": "mkelaskar-patch-1",
-  "base": "test"
+  "tag_name": "v7.0.0",
+  "target_commitish": "master",
+  "name": "v7.0.0",
+  "body": "Description of the release"
 }
+
