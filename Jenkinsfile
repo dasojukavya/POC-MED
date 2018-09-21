@@ -4,9 +4,8 @@ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKe
 
 '''], script: [classpath: [], sandbox: false, script: '''return[\'GMO-Mediator-X:selected\']
 return[\'IMOG-Mediator-X\']
-
-
-
+''']]], choice(choices: ['master development GMO-MedX-QA-Release-3.5 GMO-MedX-Release-17.16 GMO-MedX-Release-18.1 GMO-MedX-QA-Release-3.7.2 GMO-MedX-Release-18.2 GMO-MedX-Release-18.4'], description: 'branch that will be deployed', name: 'BRANCH')]), pipelineTriggers([])])
+    
     stages {
         stage('Build') {
             steps {
