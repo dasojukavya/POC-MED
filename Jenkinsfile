@@ -1,4 +1,4 @@
-def serviceName="cc-workflow-service"
+def serviceName="service"
 def slackChannel = "#testing"
 
 try {
