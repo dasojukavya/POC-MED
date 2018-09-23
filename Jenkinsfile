@@ -3,7 +3,7 @@ def slackChannel = "#testing"
 
 try {
 properties([
-  [$class: 'BuildConfigProjectProperty', name: '', namespace: '', resourceVersion: '', uid: ''], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '28')),
+//  [$class: 'BuildConfigProjectProperty', name: '', namespace: '', resourceVersion: '', uid: ''], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '28')),
   [$class: 'GitlabLogoProperty', repositoryName: ''], [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false],
   [$class: 'ThrottleJobProperty', categories: [], limitOneJobWithMatchingParams: false, maxConcurrentPerNode: 0, maxConcurrentTotal: 0, paramsToUseForLimit: '', throttleEnabled: false, throttleOption: 'project'],
   [$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/RamKannan91/zycus-test.git/'],
