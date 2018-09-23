@@ -6,7 +6,7 @@ properties([
 //  [$class: 'BuildConfigProjectProperty', name: '', namespace: '', resourceVersion: '', uid: ''], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '28')),
   [$class: 'GitlabLogoProperty', repositoryName: ''], [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false],
   [$class: 'ThrottleJobProperty', categories: [], limitOneJobWithMatchingParams: false, maxConcurrentPerNode: 0, maxConcurrentTotal: 0, paramsToUseForLimit: '', throttleEnabled: false, throttleOption: 'project'],
-  [$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/RamKannan91/zycus-test.git/'],
+ // [$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/RamKannan91/zycus-test.git/'],
   parameters(
 	[stringParam(defaultValue: "VersionNumber", description: 'set some value like 4.7', name: 'versionNum'),
 	stringParam(defaultValue: "Description of Release", description: 'enter the jira url', name: 'desc'),
