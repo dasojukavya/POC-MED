@@ -66,11 +66,11 @@ slackCompleted(slackChannel)
 def slackStart(slackChannel) {
 slackSend (channel: slackChannel, 
 	   color: "#00BFFF",
-	   message: ":sunny: *ONGOING* `QA build id in-progress`\n_Please pause all checkIn untill it is completed_.\nURL: ${env.BUILD_URL}")
+	   message: ":sunny: *STARTING* `About to start QA Deployment`\n_Please pause all checkIn untill it is completed_.\nURL: ${env.BUILD_URL}")
 }
 
 def slackCompleted(slackChannel) {
 slackSend (channel: slackChannel, 
 	   color: "#00BFFF",
-	   message: ":sunny: *COMPETED* `QA build id completed`\n_Please continue_.\nURL: ${env.BUILD_URL}")
+	   message: ":sunny: *COMPLETED* `QA Deployment is completed`\n_Please continue_.\nURL: ${env.BUILD_URL}")
 }
