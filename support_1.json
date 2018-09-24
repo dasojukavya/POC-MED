@@ -1,6 +1,7 @@
 {
-  "title": "New feature",
-  "body": "Please pull this in!",
-  "head": "mkelaskar-patch-1",
-  "base": "test"
+  "tag_name": "GMO-MedX-QA-Release-4.24",
+  "target_commitish": "master",
+  "name": "GMO-MedX-QA-Release-4.24",
+  "body": "Description of the release"
 }
+
