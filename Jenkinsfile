@@ -42,7 +42,7 @@ EOF
 }
 
 echo "Create release $VersionNumber for repo: $repo_full_name branch: development"
-curl --data "$(generate_post_data)" "https://api.github.com/repos/$repo_full_name/releases?access_token=3b2a2f67ee9cce6250c93b9dd400ba07189b8b81"
+curl --data "$(generate_post_data)" "https://api.github.com/repos/$repo_full_name/releases?access_token=a8ddb984a398e3dfc321502d04f3e83b190eb14d"
 '''
 println "tag and release completed"
 }
