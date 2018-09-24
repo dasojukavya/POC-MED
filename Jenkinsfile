@@ -6,10 +6,10 @@ properties([
 //  [$class: 'BuildConfigProjectProperty', name: '', namespace: '', resourceVersion: '', uid: ''], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '28')),
   [$class: 'GitlabLogoProperty', repositoryName: ''], [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false],
   [$class: 'ThrottleJobProperty', categories: [], limitOneJobWithMatchingParams: false, maxConcurrentPerNode: 0, maxConcurrentTotal: 0, paramsToUseForLimit: '', throttleEnabled: false, throttleOption: 'project'],
-  [$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/RamKannan91/zycus-test.git/'],
+  [$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/dasojukavya/POC-MED.git/'],
   parameters(
-	[stringParam(defaultValue: "VersionNumber", description: 'set some value like 4.7', name: 'versionNum'),
-	stringParam(defaultValue: "Description of Release", description: 'enter the jira url', name: 'desc'),
+	[stringParam(defaultValue: "VersionNumber", description: 'Enter Version Number', name: 'VersionNumber'),
+	stringParam(defaultValue: "Description of Release", description: 'Enter the Jira URL', name: 'Description'),
 	booleanParam(defaultValue: false, description: 'Skip UAT', name: 'skipUAT')])
 ])
 
@@ -31,18 +31,18 @@ generate_post_data()
 {
   cat <<EOF
 {
-  "tag_name": "GMO-MedX-QA-Release-$versionNum",
+  "tag_name": "GMO-MedX-QA-Release-$VersionNumber",
   "target_commitish": "development",
-  "name": "GMO-MedX-QA-Release-$versionNum",
-  "body": "$desc",
+  "name": "GMO-MedX-QA-Release-$VersionNumber",
+  "body": "$Description",
   "draft": false,
   "prerelease": false
 }
 EOF
 }
 
-echo "Create release $versionNum for repo: $repo_full_name branch: development"
-curl --data "$(generate_post_data)" "https://api.github.com/repos/$repo_full_name/releases?access_token=6b513532d4e950312616fd9a23dae04a3c9c879e"
+echo "Create release $VersionNumber for repo: $repo_full_name branch: development"
+curl --data "$(generate_post_data)" "https://api.github.com/repos/$repo_full_name/releases?access_token=3b2a2f67ee9cce6250c93b9dd400ba07189b8b81"
 '''
 println "tag and release completed"
 }
