@@ -23,7 +23,6 @@ stage("git checkout") {
 checkout poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/development']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'CleanCheckout'], [$class: 'WipeWorkspace']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '038e246f-d6d4-457f-9222-0e02c93d835d', url: 'https://github.com/dasojukavya/POC-MED.git']]]
 }
 
-
 stage("git tag-release") {
   sh '''
 repo_full_name=$(git config --get remote.origin.url | sed \'s/.*:\\/\\/github.com\\///;s/.git$//\')
@@ -41,7 +40,6 @@ generate_post_data()
 }
 EOF
 }
-
 
 echo "Create release $versionNum for repo: $repo_full_name branch: development"
 curl --data "$(generate_post_data)" "https://api.github.com/repos/$repo_full_name/releases?access_token=51458ce9aa28331ffa8079c5fa86f583747c8f13"
@@ -64,7 +62,6 @@ slackCompleted(slackChannel)
 } finally {
 	println "oops!!!!"  
 }
-
 
 def slackStart(slackChannel) {
 slackSend (channel: slackChannel, 
